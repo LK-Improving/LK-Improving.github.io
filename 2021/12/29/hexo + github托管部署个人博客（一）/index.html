@@ -24,7 +24,7 @@
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/29/T2S4a9.png">
 <meta property="og:image" content="https://s4.ax1x.com/2021/12/29/T29emD.png">
 <meta property="article:published_time" content="2021-12-29T10:08:32.000Z">
-<meta property="article:modified_time" content="2021-12-29T15:01:04.793Z">
+<meta property="article:modified_time" content="2021-12-29T15:12:27.746Z">
 <meta property="article:author" content="LK">
 <meta property="article:tag" content="hexo">
 <meta name="twitter:card" content="summary">
@@ -151,7 +151,7 @@
 <li>scaffolds：生成文章的一些模板</li>
 <li>source：用来存放你的文章</li>
 <li>themes：主题</li>
-<li>** _config.yml: 博客的配置文件**</li>
+<li>_config.yml: 博客的配置文件</li>
 </ul>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
 
@@ -176,8 +176,8 @@
 
 <p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
 <p><img src="https://s4.ax1x.com/2021/12/29/Tgq92Q.png" alt="Tgq92Q.png"></p>
-<p>ssh，简单来讲，就是一个秘钥，其中，<strong>id_rsa</strong>是你这台电脑的私人秘钥，不能给别人看的，<strong>id_rsa.pub</strong>是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
-<p>而后在GitHub的setting中，找到SSH keys的设置选项，点击<strong>New SSH key</strong>把你的<strong>id_rsa.pub</strong>里面的信息复制进去。</p>
+<p>ssh，简单来讲，就是一个秘钥，其中，<code>id_rsa</code>是你这台电脑的私人秘钥，不能给别人看的，<code>id_rsa.pub</code>是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
+<p>而后在GitHub的setting中，找到SSH keys的设置选项，点击<code>New SSH key</code>把你的<code>id_rsa.pub</code>里面的信息复制进去。</p>
 <p><img src="https://s4.ax1x.com/2021/12/29/TgqRzQ.png" alt="TgqRzQ.png"></p>
 <p>在gitbash中，查看是否成功</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
@@ -202,11 +202,11 @@
 <h3 id="7-设置个人域名"><a href="#7-设置个人域名" class="headerlink" title="7. 设置个人域名"></a>7. 设置个人域名</h3><p>现在你的个人网站的地址是 <code>yourname.github.io</code>，如果觉得这个网址逼格不太够，这就需要你设置个人域名了。但是需要花钱。</p>
 <p>注册一个阿里云账户,在阿里云上买一个域名，我买的是 <code>lkme.top</code>，各个后缀的价格不太一样，比如最广泛的.com就比较贵，看个人喜好咯。</p>
 <p>你需要先去进行实名认证,然后在域名控制台中，看到你购买的域名。</p>
-<p>点<strong>解析</strong>进去，添加解析。<br><img src="https://s4.ax1x.com/2021/12/29/TgznTs.jpg" alt="TgznTs.jpg"></p>
+<p>点<code>解析</code>进去，添加解析。<br><img src="https://s4.ax1x.com/2021/12/29/TgznTs.jpg" alt="TgznTs.jpg"></p>
 <p>其中，192.30.252.153 和 192.30.252.154 是GitHub的服务器地址。</p>
 <p><img src="https://s4.ax1x.com/2021/12/29/T2SmjO.png" alt="T2SmjO.png"></p>
-<p>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名fangzh.top</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/T2S4a9"><img src="https://s4.ax1x.com/2021/12/29/T2S4a9.png" alt="T2S4a9.png"></a></p>
+<p>登录GitHub，进入之前创建的仓库，点击settings，设置Custom domain，输入你的域名lkme.top</p>
+<p><img src="https://s4.ax1x.com/2021/12/29/T2S4a9.png" alt="T2S4a9.png"></p>
 <p>然后在你的博客文件source中创建一个名为CNAME文件，不要后缀。写上你的域名。</p>
 <p><img src="https://s4.ax1x.com/2021/12/29/T29emD.png" alt="T29emD.png"></p>
 <p>最后，在gitbash中，输入</p>
@@ -224,7 +224,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://lkme.top/2021/12/29/hexo%20+%20github%E6%89%98%E7%AE%A1%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89/" data-id="ckxro3b950001tgwjhd7n392o" data-title="hexo + github托管部署个人博客（一）" class="article-share-link">Share</a>
+      <a data-url="http://lkme.top/2021/12/29/hexo%20+%20github%E6%89%98%E7%AE%A1%E9%83%A8%E7%BD%B2%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%EF%BC%88%E4%B8%80%EF%BC%89/" data-id="ckxroq0ka00018kwj1riqeahq" data-title="hexo + github托管部署个人博客（一）" class="article-share-link">Share</a>
       
       
       
