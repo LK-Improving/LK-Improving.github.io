@@ -90,25 +90,49 @@
       </tags>
   </entry>
   <entry>
-    <title>Jsx语法规则</title>
-    <url>/2022/01/14/Jsx%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<h2 id="Jsx语法规则"><a href="#Jsx语法规则" class="headerlink" title="Jsx语法规则"></a>Jsx语法规则</h2><ol>
-<li>定义虚拟DOM时，不要写引号。</li>
-<li>标签中混入JS表达式时要用{}。</li>
-<li>样式的类名指定不要用class，要用className。</li>
-<li>内联样式，要用<code>style=&#123;&#123;key:value&#125;&#125;</code>的形式去写。</li>
-<li>只有一个根标签</li>
-<li>标签必须闭合</li>
-<li>标签首字母</li>
-</ol>
-<p><code>(1).若小写字母开头，则将改标签转为html中同名元素，若html中无该标签对应的同名元素，则报错。</code><br><code>(2）若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。</code></p>
+    <title>React的Sass配置</title>
+    <url>/2022/01/18/React%E7%9A%84Sass%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<h2 id="一、在已有项目下安装node-sass"><a href="#一、在已有项目下安装node-sass" class="headerlink" title="一、在已有项目下安装node-sass"></a>一、在已有项目下安装node-sass</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install node-sass -D</span><br></pre></td></tr></table></figure>
+<p>有个小坑，node-sass版本不同对node的要求不一样。</p>
+<p>Node 11 —–&gt;  node-sass 4.10+, &lt;5.0</p>
+<p>Node 10 —-&gt;  node-sass 4.9+, &lt;6.0</p>
+<p>Node 8   —–&gt; node-sass 4.5.3+, &lt;5.0</p>
+<p>具体可查看<a href="https://www.npmjs.com/package/node-sass">node-sass版本</a></p>
+<blockquote>
+<p>若要使用SASS MODULE，则需要将*.scss文件改为*.module.scss。</p>
+</blockquote>
+<h2 id="二、react中配置全局sass"><a href="#二、react中配置全局sass" class="headerlink" title="二、react中配置全局sass"></a>二、react中配置全局sass</h2><h3 id="1-安装sass"><a href="#1-安装sass" class="headerlink" title="1.安装sass"></a>1.安装sass</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm i sass-loader --save-dev</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-安装resource依赖"><a href="#2-安装resource依赖" class="headerlink" title="2.安装resource依赖"></a>2.安装resource依赖</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install sass-resources-loader -D</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-安装完成后，发现通过create-react-app下载的脚手架项目没有webpack-config，这时去node-module下找react-scripts-config-webpack-config-js即为该项目的webpack文件，找到exclude-sassModuleRegex-修改如下即可完成全局配置公用样式"><a href="#3-安装完成后，发现通过create-react-app下载的脚手架项目没有webpack-config，这时去node-module下找react-scripts-config-webpack-config-js即为该项目的webpack文件，找到exclude-sassModuleRegex-修改如下即可完成全局配置公用样式" class="headerlink" title="3.安装完成后，发现通过create-react-app下载的脚手架项目没有webpack.config，这时去node_module下找react-scripts/config/webpack.config.js即为该项目的webpack文件，找到exclude: sassModuleRegex,修改如下即可完成全局配置公用样式"></a>3.安装完成后，发现通过create-react-app下载的脚手架项目没有webpack.config，这时去node_module下找react-scripts/config/webpack.config.js即为该项目的webpack文件，找到exclude: sassModuleRegex,修改如下即可完成全局配置公用样式</h3><pre><code>          &#123;
+            test: sassRegex,
+          exclude: sassModuleRegex,
+          use: getStyleLoaders(
+            &#123;
+              importLoaders: 3,
+              sourceMap: isEnvProduction
+                ? shouldUseSourceMap
+                : isEnvDevelopment,
+            &#125;,
+            &#39;sass-loader&#39;
+          ).concat(&#123;
+            loader:&#39;sass-resources-loader&#39;,
+            options:&#123;
+              resources:[
+                // 按照文件路径填写
+                path.resolve(&#39;./src/styles/sassConfig.scss&#39;)
+              ]
+            &#125;
+          &#125;),
+</code></pre>
 ]]></content>
       <categories>
         <category>Web</category>
         <category>前端开发</category>
       </categories>
       <tags>
-        <tag>Js</tag>
+        <tag>React</tag>
       </tags>
   </entry>
   <entry>
@@ -241,6 +265,28 @@
       </categories>
       <tags>
         <tag>Hexo</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Jsx语法规则</title>
+    <url>/2022/01/14/Jsx%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<h2 id="Jsx语法规则"><a href="#Jsx语法规则" class="headerlink" title="Jsx语法规则"></a>Jsx语法规则</h2><ol>
+<li>定义虚拟DOM时，不要写引号。</li>
+<li>标签中混入JS表达式时要用{}。</li>
+<li>样式的类名指定不要用class，要用className。</li>
+<li>内联样式，要用<code>style=&#123;&#123;key:value&#125;&#125;</code>的形式去写。</li>
+<li>只有一个根标签</li>
+<li>标签必须闭合</li>
+<li>标签首字母</li>
+</ol>
+<p><code>(1).若小写字母开头，则将改标签转为html中同名元素，若html中无该标签对应的同名元素，则报错。</code><br><code>(2）若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。</code></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>前端开发</category>
+      </categories>
+      <tags>
+        <tag>Js</tag>
       </tags>
   </entry>
 </search>
