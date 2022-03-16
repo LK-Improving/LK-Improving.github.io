@@ -3,7 +3,7 @@
   <entry>
     <title>Git-随笔</title>
     <url>/2021/12/30/Git-%E9%9A%8F%E7%AC%94/</url>
-    <content><![CDATA[<h2 id="github仓库初始操作"><a href="#github仓库初始操作" class="headerlink" title="github仓库初始操作"></a>github仓库初始操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/LK0724/SpringBoot-resultful.git</span><br><span class="line">git push -u origin mastergit init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/LK0724/test.git</span><br><span class="line">git push -u origin master</span><br><span class="line"></span><br><span class="line">git remote add origin https://github.com/LK0724/test.git</span><br><span class="line">git push -u origin master</span><br><span class="line">git remote set-url origin https://github.com/LK0724/SpringBoot-resultful.git</span><br></pre></td></tr></table></figure>
+    <content><![CDATA[<h2 id="github仓库初始操作"><a href="#github仓库初始操作" class="headerlink" title="github仓库初始操作"></a>github仓库初始操作</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git init</span><br><span class="line">git add README.md</span><br><span class="line">git commit -m &quot;first commit&quot;</span><br><span class="line">git remote add origin https://github.com/LK0724/SpringBoot-resultful.git</span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
 
 
 
@@ -287,6 +287,21 @@
       </categories>
       <tags>
         <tag>Js</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件设计师个人易错相关知识点</title>
+    <url>/2022/03/16/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%B8%AA%E4%BA%BA%E6%98%93%E9%94%99%E7%9B%B8%E5%85%B3/</url>
+    <content><![CDATA[<h2 id="1、面向对象"><a href="#1、面向对象" class="headerlink" title="1、面向对象"></a>1、面向对象</h2><p>1、多重继承是指一个类有多个父类，正是题目所述的情况。多重继承可能造成混淆的情况，出现二义性的成员。</p>
+<p>2、多态：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。在运行时，可以通过指向基类的指针，来调用实现派生类中的方法。也就是说客户类其实在调用方法时，并不需要知道特定子类的实现，都会用统一的方式来调用。</p>
+<p>装饰模式是一种对象结构型模式，可动态地给一个对象增加一些额外的职责，就增加对象功能来说，装饰模式比生成子类实现更为灵活。通过装饰模式，可以在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责；当需要动态地给一个对象增加功能，这些功能可以再动态地被撤销时可使用装饰模式；当不能采用生成子类的方法进行扩充时也可使用装饰模式。</p>
+<p>外观模式是对象的结构模式，要求外部与一个子系统的通信必须通过一个统一的外观对象进行，为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
+]]></content>
+      <categories>
+        <category>软件设计师</category>
+      </categories>
+      <tags>
+        <tag>软考</tag>
       </tags>
   </entry>
 </search>
