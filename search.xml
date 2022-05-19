@@ -90,6 +90,28 @@
       </tags>
   </entry>
   <entry>
+    <title>Jsx语法规则</title>
+    <url>/2022/01/14/Jsx%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
+    <content><![CDATA[<h2 id="Jsx语法规则"><a href="#Jsx语法规则" class="headerlink" title="Jsx语法规则"></a>Jsx语法规则</h2><ol>
+<li>定义虚拟DOM时，不要写引号。</li>
+<li>标签中混入JS表达式时要用{}。</li>
+<li>样式的类名指定不要用class，要用className。</li>
+<li>内联样式，要用<code>style=&#123;&#123;key:value&#125;&#125;</code>的形式去写。</li>
+<li>只有一个根标签</li>
+<li>标签必须闭合</li>
+<li>标签首字母</li>
+</ol>
+<p><code>(1).若小写字母开头，则将改标签转为html中同名元素，若html中无该标签对应的同名元素，则报错。</code><br><code>(2）若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。</code></p>
+]]></content>
+      <categories>
+        <category>Web</category>
+        <category>前端开发</category>
+      </categories>
+      <tags>
+        <tag>Js</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>React的Sass配置</title>
     <url>/2022/01/18/React%E7%9A%84Sass%E9%85%8D%E7%BD%AE/</url>
     <content><![CDATA[<h2 id="一、在已有项目下安装node-sass"><a href="#一、在已有项目下安装node-sass" class="headerlink" title="一、在已有项目下安装node-sass"></a>一、在已有项目下安装node-sass</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install node-sass -D</span><br></pre></td></tr></table></figure>
@@ -268,40 +290,23 @@
       </tags>
   </entry>
   <entry>
-    <title>Jsx语法规则</title>
-    <url>/2022/01/14/Jsx%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/</url>
-    <content><![CDATA[<h2 id="Jsx语法规则"><a href="#Jsx语法规则" class="headerlink" title="Jsx语法规则"></a>Jsx语法规则</h2><ol>
-<li>定义虚拟DOM时，不要写引号。</li>
-<li>标签中混入JS表达式时要用{}。</li>
-<li>样式的类名指定不要用class，要用className。</li>
-<li>内联样式，要用<code>style=&#123;&#123;key:value&#125;&#125;</code>的形式去写。</li>
-<li>只有一个根标签</li>
-<li>标签必须闭合</li>
-<li>标签首字母</li>
-</ol>
-<p><code>(1).若小写字母开头，则将改标签转为html中同名元素，若html中无该标签对应的同名元素，则报错。</code><br><code>(2）若大写字母开头，react就去渲染对应的组件，若组件没有定义，则报错。</code></p>
-]]></content>
-      <categories>
-        <category>Web</category>
-        <category>前端开发</category>
-      </categories>
-      <tags>
-        <tag>Js</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>软件设计师个人易错相关知识点</title>
     <url>/2022/03/16/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88%E4%B8%AA%E4%BA%BA%E6%98%93%E9%94%99%E7%9B%B8%E5%85%B3/</url>
-    <content><![CDATA[<h2 id="1、面向对象"><a href="#1、面向对象" class="headerlink" title="1、面向对象"></a>1、面向对象</h2><p>1、多重继承是指一个类有多个父类，正是题目所述的情况。多重继承可能造成混淆的情况，出现二义性的成员。</p>
+    <content><![CDATA[<h2 id="1、计算机系统"><a href="#1、计算机系统" class="headerlink" title="1、计算机系统"></a>1、计算机系统</h2><h3 id="1、流水线公式"><a href="#1、流水线公式" class="headerlink" title="1、流水线公式"></a>1、流水线公式</h3><p>如果有 n 条指令，那么流水线公式如下：</p>
+<p><strong>第一条指令的执行时间 + （n - 1） *  操作周期</strong></p>
+<p>（ps： 操作周期 = 最长段的时间）</p>
+<p>吞吐率为：</p>
+<p> <strong>n / 第一条指令的执行时间 + （n - 1） *  操作周期</strong></p>
+<h2 id="2、面向对象"><a href="#2、面向对象" class="headerlink" title="2、面向对象"></a>2、面向对象</h2><p>1、多重继承是指一个类有多个父类，正是题目所述的情况。多重继承可能造成混淆的情况，出现二义性的成员。</p>
 <p>2、多态：同一操作作用于不同的对象，可以有不同的解释，产生不同的执行结果。在运行时，可以通过指向基类的指针，来调用实现派生类中的方法。也就是说客户类其实在调用方法时，并不需要知道特定子类的实现，都会用统一的方式来调用。</p>
-<p>装饰模式是一种对象结构型模式，可动态地给一个对象增加一些额外的职责，就增加对象功能来说，装饰模式比生成子类实现更为灵活。通过装饰模式，可以在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责；当需要动态地给一个对象增加功能，这些功能可以再动态地被撤销时可使用装饰模式；当不能采用生成子类的方法进行扩充时也可使用装饰模式。</p>
-<p>外观模式是对象的结构模式，要求外部与一个子系统的通信必须通过一个统一的外观对象进行，为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
-<p>观察者(Observer)模式。</p>
+<p><strong>装饰模式</strong>是一种对象结构型模式，可动态地给一个对象增加一些额外的职责，就增加对象功能来说，装饰模式比生成子类实现更为灵活。通过装饰模式，可以在不影响其他对象的情况下，以动态、透明的方式给单个对象添加职责；当需要动态地给一个对象增加功能，这些功能可以再动态地被撤销时可使用装饰模式；当不能采用生成子类的方法进行扩充时也可使用装饰模式。</p>
+<p><strong>外观模式</strong>是对象的结构模式，要求外部与一个子系统的通信必须通过一个统一的外观对象进行，为子系统中的一组接口提供一个一致的界面，外观模式定义了一个高层接口，这个接口使得这一子系统更加容易使用。</p>
+<p><strong>观察者(Observer)模式：</strong></p>
 <p>意图：定义对象间的一种一对多的依赖关系，当一个对象的状态发生改变时，所有依赖于它的对象都得到通知并被自动更新。</p>
 <p>观察者模式的适用场合：<br>(1)当一个抽象模型有两个方面，其中一个方面依赖于另一个方面，将这两者封装在独立的对象中以使它们可以各自独立地改变和复用。</p>
 <p>(2)当对一个对象的改变需要同时改变其他对象，而不知道具体有多少对象有待改变时。</p>
 <p>(3)当一个对象必须通知其他对象，而它又不能假定其他对象是谁，即不希望这些对象是紧耦合的。</p>
-<h2 id="2、软件工程"><a href="#2、软件工程" class="headerlink" title="2、软件工程"></a>2、软件工程</h2><p>1、McCabe（环路复杂性）：<br>（1）：环路复杂性 = 弧数 - 节点数 + 2<br>（2）：环路复杂性 = 闭合弧数 + 1<br>2、可靠性是指一个系统对于给定的时间间隔内、在给定条件下无失效运作的概率。可以用<strong>MTTF / (1 + MTTF)<strong>来度量，其中</strong>MTTF</strong>为平均无故障时间。<br>3、可用性是在给定的时间点上，一个系统能够按照规格说明正确运作的概率。可以用<strong>MTBF / (1 + MTBF)<strong>来度量，其中</strong>MTBF</strong>为平均失效间隔时间。<br>4、可维护性是在给定的使用条件下，在规定的时间间隔内，使用规定的过程和资源完成维护活动的概率。可以用<strong>1 / (1 + MTTR)<strong>来度量，其中</strong>MTTR</strong>为平均修复时间。</p>
+<h2 id="3、软件工程"><a href="#3、软件工程" class="headerlink" title="3、软件工程"></a>3、软件工程</h2><p>1、McCabe（环路复杂性）：<br>（1）：环路复杂性 = 弧数 - 节点数 + 2<br>（2）：环路复杂性 = 闭合弧数 + 1<br>2、可靠性是指一个系统对于给定的时间间隔内、在给定条件下无失效运作的概率。可以用<strong>MTTF / (1 + MTTF)<strong>来度量，其中</strong>MTTF</strong>为平均无故障时间。<br>3、可用性是在给定的时间点上，一个系统能够按照规格说明正确运作的概率。可以用<strong>MTBF / (1 + MTBF)<strong>来度量，其中</strong>MTBF</strong>为平均失效间隔时间。<br>4、可维护性是在给定的使用条件下，在规定的时间间隔内，使用规定的过程和资源完成维护活动的概率。可以用<strong>1 / (1 + MTTR)<strong>来度量，其中</strong>MTTR</strong>为平均修复时间。</p>
 <p>5、沟通路径：**[n * (n-1)] / 2**</p>
 ]]></content>
       <categories>
